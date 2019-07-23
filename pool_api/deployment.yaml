@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pool-api
+  labels:
+    app: pool-api
+spec:
+  selector:
+    matchLabels:
+      app: pool-api
+  template:
+    metadata:
+      labels:
+        app: pool-api
+    spec:
+      containers:
+      - name: pool-api
+        image: jaydeeph/pool-api:latest
+        ports:
+        - containerPort: 8080

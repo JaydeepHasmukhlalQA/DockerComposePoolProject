@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pool-ui
+  labels:
+    app: pool-ui
+spec:
+  selector:
+    matchLabels:
+      app: pool-ui
+  template:
+    metadata:
+      labels:
+        app: pool-ui
+    spec:
+      containers:
+      - name: pool-ui
+        image: jaydeeph/pool-ui:latest
+        ports:
+        - containerPort: 80
